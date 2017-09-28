@@ -27,13 +27,13 @@ from_numb          Industry
 area_code          Campaign type                     
 country            Title
 
-# 2nd data batch
-# Company name
+\# 2nd data batch
+\# Company name
 
-# 3rd data batch
-# Industry
-# Campaign type
-# Title
+\# 3rd data batch
+\# Industry
+\# Campaign type
+\# Title
 
 
 
