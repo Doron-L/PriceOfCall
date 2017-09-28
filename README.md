@@ -20,10 +20,10 @@ I asked for features that may help. There where two more rounds where they sent 
 ### The Data (features)
 
 **1st data batch** &emsp;&emsp;   **2nd data batch**  
-id &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;  Company name  
+id &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;  Company name  
 duration  
-called_at &emsp;&emsp;&emsp;&emsp;&ensp;         **3rd data batch**  
-from_numb &emsp;&emsp;&emsp;&nbsp;         Industry  
+called_at &emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;         **3rd data batch**  
+from_numb &emsp;&emsp;&emsp;&nbsp;&nbsp;         Industry  
 area_code &emsp;&emsp;&emsp;&emsp;         Campaign type                     
 country   &emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;         Title  
 
