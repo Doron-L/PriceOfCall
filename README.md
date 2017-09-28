@@ -51,7 +51,9 @@ For our objective, we need a binary target: 0 and 1, for a non-picked-up and a p
 I threw classes 2, 8, 9, 10, 14, as they didn't seem relevant. Classes 3 and 4 were grouped as the non-picked up calls. the rest of the classes were grouped as the picked-up calls.  
 
 ## Exploratory Data Analysis 
-I first made an exploratory data analysis to see if there are dependencies between the pick-up ratio
+I first looked at the country feature. There were calls to many different countries, but only the US and GB had more than 100 calls each. More specifically, after cleaning ..., there were 299163 and 381 calls to the US and GB, respectively. Since these calls are further divided to the many other features, I removed GB as well. 
+
+Then I made an exploratory data analysis to see if there are dependencies between the pick-up ratio
 and the features. It looked like the pick-up rate depends on.... However, I suspected that this dependecy may
 be some averaging over.... Thus, I plotted the pick-up rate vs. hour for the 2 area codes with the highest 
 number of calls.
