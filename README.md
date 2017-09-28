@@ -45,9 +45,9 @@ country            Title
 13 = completed_fu_inperson &emsp;    9 = wrong_number
 
 **try again**                  **failed**  
-1 = call_back_later  &emsp;&emsp;&emsp;&emsp;          3 = no_answer  
-2 = busy             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;    8 = no_service  
-4 = voicemail        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;          14 = technical_issues  
+1 = call_back_later  &emsp;&emsp;&emsp;&emsp;&emsp;          3 = no_answer  
+2 = busy  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;    8 = no_service  
+4 = voicemail   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;          14 = technical_issues  
 16 = alternative_phone &emsp;&emsp;&emsp;        10 =  untried 
 
 **speaking**                   **interested**  
