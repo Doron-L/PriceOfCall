@@ -39,19 +39,19 @@ country            Title
 
 ### The Data (targets)
 **completed**                  **not interested**  
-0 = completed  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                5 = hungup  
-11 = completed_fu_call  <pre></pre>       6 = not_interested  
-12 = completed_fu_email &ensp;       7 = dnc (do not call)  
+0 = completed  &emsp;                5 = hungup  
+11 = completed_fu_call  &emsp;       6 = not_interested  
+12 = completed_fu_email &emsp;       7 = dnc (do not call)  
 13 = completed_fu_inperson &emsp;    9 = wrong_number
 
 **try again**                  **failed**  
-1 = call_back_later            3 = no_answer  
-2 = busy                       8 = no_service  
-4 = voicemail                  14 = technical_issues
-16 = alternative_phone         10 =  untried 
+1 = call_back_later  &emsp;          3 = no_answer  
+2 = busy             &emsp;          8 = no_service  
+4 = voicemail        &emsp;          14 = technical_issues
+16 = alternative_phone &emsp;        10 =  untried 
 
 **speaking**                   **interested**
-15 = speaking                  17 = maybe_interested 
+15 = speaking   &emsp;               17 = maybe_interested 
 
 **not interested**  
 5 = hungup  
