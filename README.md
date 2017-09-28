@@ -1,19 +1,18 @@
 # PriceOfCall
 
-![](https://github.com/Doron-L/PriceOfCall/blob/master/price_smoothed_vs_industry_n_campaign_type_png)
 
-##Introduction
+## Introduction
 During my fellowship at Insight Data Science I took on a two weeks consulting project for Upcall,
 a B2B telemarketing and sales company. Upcall wanted to get insights from their data. It made sense to 
 optimize the time when a specific number is being called in order to increase pick up rate (probability 
 that someone answers the phone).
 
 
-##The Problem
+## The Problem
 
 
 
-##Data Acquisition
+## Data Acquisition
 A first data set was givven by Upcall. After I examined the data... predictive power for the purpose of...
 I asked for features that may help. There where two more rounds where they sent me two more sets of features.
 
@@ -133,7 +132,7 @@ Choosing the two features with the fewest number of categories, and cleaning the
 only if there were NaNs in their elements. Leaving more data, and less features. Thus, leaving the emphsize over 
 time and making exploratory data analysis of the pick-up ratio over these two features.
 
-
+![](https://github.com/Doron-L/PriceOfCall/blob/master/price_smoothed_vs_industry_n_campaign_type_png)
 
 Still can be done:
 text mining of the titles feature, in a similar way to the one I have done for companies.
