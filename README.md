@@ -41,7 +41,7 @@ country            Title
 **completed**                  **not interested**  
 0 = completed  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;   5 = hungup  
 11 = completed_fu_call  &emsp;&emsp;&emsp;&nbsp;       6 = not_interested  
-12 = completed_fu_email &emsp;&emsp;       7 = dnc (do not call)  
+12 = completed_fu_email &emsp;&emsp;&nbsp;       7 = dnc (do not call)  
 13 = completed_fu_inperson &emsp;    9 = wrong_number
 
 **try again**                  **failed**  
