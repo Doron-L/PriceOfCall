@@ -46,11 +46,11 @@ country            Title
 
 **try again**                  **failed**  
 1 = call_back_later  &emsp;          3 = no_answer  
-2 = busy             &emsp;          8 = no_service  
-4 = voicemail        &emsp;          14 = technical_issues
+2 = busy             &emsp;&emsp;    8 = no_service  
+4 = voicemail        &emsp;          14 = technical_issues  
 16 = alternative_phone &emsp;        10 =  untried 
 
-**speaking**                   **interested**
+**speaking**                   **interested**  
 15 = speaking   &emsp;               17 = maybe_interested 
 
 
