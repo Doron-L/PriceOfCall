@@ -40,9 +40,9 @@ country            Title
 ### The Data (targets)
 **completed**                  **not interested**  
 0 = completed  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                5 = hungup  
-11 = completed_fu_call         6 = not_interested  
-12 = completed_fu_email        7 = dnc (do not call)  
-13 = completed_fu_inperson     9 = wrong_number
+11 = completed_fu_call  <pre></pre>       6 = not_interested  
+12 = completed_fu_email &ensp;       7 = dnc (do not call)  
+13 = completed_fu_inperson &emsp;    9 = wrong_number
 
 **try again**                  **failed**  
 1 = call_back_later            3 = no_answer  
