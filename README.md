@@ -38,20 +38,20 @@ country            Title
 
 
 ### The Data (targets)
-**completed** 
-0 = completed  
-11 = completed_fu_call  
-12 = completed_fu_email  
-13 = completed_fu_inperson  
+**completed**                  **not interested**  
+0 = completed                  5 = hungup  
+11 = completed_fu_call         6 = not_interested  
+12 = completed_fu_email        7 = dnc (do not call)  
+13 = completed_fu_inperson     9 = wrong_number
 
-**try again**  
-1 = call_back_later  
-2 = busy  
-4 = voicemail  
-16 = alternative_phone  
+**try again**                  **failed**  
+1 = call_back_later            3 = no_answer  
+2 = busy                       8 = no_service  
+4 = voicemail                  14 = technical_issues
+16 = alternative_phone         10 =  untried 
 
-**speaking**  
-15 = speaking  
+**speaking**                   **interested**
+15 = speaking                  17 = maybe_interested 
 
 **not interested**  
 5 = hungup  
@@ -131,6 +131,8 @@ Objective that can met and is very valuable for the company.
 Choosing the two features with the fewest number of categories, and cleaning the data 
 only if there were NaNs in their elements. Leaving more data, and less features. Thus, leaving the emphsize over 
 time and making exploratory data analysis of the pick-up ratio over these two features.
+![](https://github.com/Doron-L/PriceOfCall/blob/master/pickup_ratio_vs_industry_png)
+![](https://github.com/Doron-L/PriceOfCall/blob/master/pickup_ratio_vs_campaign_type_png)
 
 ![](https://github.com/Doron-L/PriceOfCall/blob/master/price_smoothed_vs_industry_n_campaign_type_png)
 
