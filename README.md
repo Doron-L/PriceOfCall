@@ -52,7 +52,7 @@ country            Title
 16 = alternative_phone  
 
 **speaking**  
-::15 = speaking::  
+15 = speaking  
 
 **not interested**  
 5 = hungup  
@@ -60,13 +60,13 @@ country            Title
 7 = dnc (do not call)  
 9 = wrong_number
 
-# failed  
+**failed**  
 3 = no_answer  
 8 = no_service  
 14 = technical_issues 
 10 =  untried 
 
-# interested  
+**interested**  
 17 = maybe_interested 
 
 
@@ -102,7 +102,13 @@ Number of area codes:                          294
 Number of companies:                         15993
 Number of titles:                             1797
 Number of industries:                           28
-
+| Feature        | # of categories| 
+| ---------------|:--------------:| 
+| from_numb      | 258            | 
+| campaign type  | 5              | 
+| area codes     | 294            |  
+| titles         | 15993          |  
+| industries     | 28             |  
 
 
 The amount of data data:
