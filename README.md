@@ -19,13 +19,13 @@ I asked for features that may help. There where two more rounds where they sent 
 
 ### The Data (features)
 
-**1st data batch**     **2nd data batch**  
-id                 Company name  
+**1st data batch** &emsp;&emsp;   **2nd data batch**  
+id &emsp;&emsp;&emsp;             Company name  
 duration  
-called_at          **3rd data batch**  
-from_numb          Industry  
-area_code          Campaign type                     
-country            Title  
+called_at &emsp;         **3rd data batch**  
+from_numb &emsp;         Industry  
+area_code &emsp;         Campaign type                     
+country   &emsp;         Title  
 
 
 
