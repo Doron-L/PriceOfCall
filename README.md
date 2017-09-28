@@ -27,7 +27,7 @@ from_numb &emsp;&emsp;&emsp;&nbsp;&nbsp;         Industry
 area_code &emsp;&emsp;&emsp;&emsp;         Campaign type                     
 country   &emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;         Title  
 
-
+??? meaning of the features
 
 ### The Data (targets)
 
@@ -48,15 +48,28 @@ For our objective, we need a binary target: 0 and 1, for a non-picked-up and a p
 **Speaking**                   **Interested**  
 15 = speaking   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;             17 = maybe_interested 
 
+??? meaning of the targets
+
 I threw classes 2, 8, 9, 10, 14, as they didn't seem relevant. Classes 3 and 4 were grouped as the non-picked up calls. the rest of the classes were grouped as the picked-up calls.  
 
 ## Exploratory Data Analysis 
 I first looked at the country feature. There were calls to many different countries, but only the US and GB had more than 100 calls each. More specifically, after cleaning ..., there were 299163 and 381 calls to the US and GB, respectively. Since these calls are further divided to the many other features, I removed GB as well. 
 
 Then I made an exploratory data analysis to see if there are dependencies between the pick-up ratio
-and the features. It looked like the pick-up rate depends on.... However, I suspected that this dependecy may
+and the features. I looked at the dependencies on time (e.g., year, month, day of week, and hour). At a first glace, the human eye could identifies "trend". For example, by looking at the dependency of the pick-up ratio over the hour, we see that the pick-up ratio is higher at the middle of the working day (except for some increase at 19:00, please see the black curve in the following figure), which makes perfect sence ads we call to a business. However, when we look at this dependency in the three area codes with the highest number of calls, we see that the dependency of the pick-up ratio over time is really different between the different area codes and between them and the general trend. Note that bins with less than 100 calls were removed. 
+![](https://github.com/Doron-L/PriceOfCall/blob/master/pickup_ratio_vs_hour_diff_area_codes_png)
+A similar insights are found when the pick-up ratio vs. hour (or any other time measure) is ploted for the different categories of another feature. Thus, the conclusion here is that it is risky to infer ??? from an exploratory analysis of two or three features and that the dependency of the pick-up ratio may depend on more than one or two features and maybe also depend in a more complex way.
+
+
+
+It looked like the pick-up rate depends on.... However, I suspected that this dependecy may
 be some averaging over.... Thus, I plotted the pick-up rate vs. hour for the 2 area codes with the highest 
 number of calls.
+
+
+??? but does it depend on the area code?
+
+bins with less than 100 calls were removed.
 
 ## Machine Learning
 Even though things where not clear in the exploratory data analysis, I applied machine learning classification
@@ -92,8 +105,10 @@ It turns out that it is difficult...
 
 The amount of data  
 Data size: 320k calls  
-Cleaned data:  <40k calls  
-Picked-up: < 15k calls  
+Cleaned data:  <30-40k calls depending on the exact cleaning procedure  
+Picked-up: ~ 1/3 of the cleaned calls  
+
+One of the reasons we are left with a vey low number of calls after the cleaning is that the company started to collect different features at different times, amd so only the most recent calls have information in all their features. 
     
 In addition to the lack of enough data, the features didn't seem to have a lot of predicted power.
 I tried to speculate why two features that initially I thought will have information didn't have.
@@ -122,5 +137,7 @@ time and making exploratory data analysis of the pick-up ratio over these two fe
 ![](https://github.com/Doron-L/PriceOfCall/blob/master/price_smoothed_vs_industry_n_campaign_type_png)
 
 Still can be done:
+more features: company size, 
+
 text mining of the titles feature, in a similar way to the one I have done for companies.
 I thought that the companies feature should have more information, so I text mind it first.
