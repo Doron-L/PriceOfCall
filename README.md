@@ -19,38 +19,30 @@ I asked for features that may help. There where two more rounds where they sent 
 
 ### The Data (features)
 
-1st data batch     2nd data batch
-id                 Company name
-duration 
-called_at          3rd data batch
-from_numb          Industry
+**1st data batch**     **2nd data batch**  
+id                 Company name  
+duration  
+called_at          **3rd data batch**  
+from_numb          Industry  
 area_code          Campaign type                     
-country            Title
-
-\# 2nd data batch
-\# Company name
-
-\# 3rd data batch
-\# Industry
-\# Campaign type
-\# Title
+country            Title  
 
 
 
 ### The Data (targets)
-**completed**                  **not interested**  
+**Completed**                  **Not interested**  
 0 = completed  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;   5 = hungup  
 11 = completed_fu_call  &emsp;&emsp;&emsp;&nbsp;       6 = not_interested  
 12 = completed_fu_email &emsp;&emsp;&nbsp;       7 = dnc (do not call)  
 13 = completed_fu_inperson &emsp;    9 = wrong_number
 
-**try again**                  **failed**  
+**Try again**                  **Failed**  
 1 = call_back_later  &emsp;&emsp;&emsp;&emsp;&emsp;          3 = no_answer  
-2 = busy  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;    8 = no_service  
+2 = busy  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;    8 = no_service  
 4 = voicemail   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;          14 = technical_issues  
 16 = alternative_phone &emsp;&emsp;&emsp;        10 =  untried 
 
-**speaking**                   **interested**  
+**Speaking**                   **Interested**  
 15 = speaking   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;             17 = maybe_interested 
 
 
