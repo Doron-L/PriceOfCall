@@ -1,5 +1,7 @@
 # PriceOfCall
 
+![](https://github.com/Doron-L/PriceOfCall/blob/master/price_smoothed_vs_industry_n_campaign_type_png)
+
 Introduction
 During my fellowship at Insight Data Science I took on a two weeks consulting project for Upcall,
 a B2B telemarketing and sales company. Upcall wanted to get insights from their data. It made sense to 
@@ -131,7 +133,6 @@ only if there were NaNs in their elements. Leaving more data, and less features.
 time and making exploratory data analysis of the pick-up ratio over these two features.
 
 
-![](price_smoothed_vs_industry_n_campaign_type_png.png)
 
 Still can be done:
 text mining of the titles feature, in a similar way to the one I have done for companies.
