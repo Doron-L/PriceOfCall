@@ -30,6 +30,9 @@ country   &emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;         Title
 
 
 ### The Data (targets)
+
+For our objective, we need a binary target: 0 and 1, for a non-picked-up and a picked-up call, respectively. However, in the target, there were 17 different categories:
+
 **Completed**                  **Not interested**  
 0 = completed  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;   5 = hungup  
 11 = completed_fu_call  &emsp;&emsp;&emsp;&nbsp;       6 = not_interested  
@@ -45,24 +48,23 @@ country   &emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;         Title
 **Speaking**                   **Interested**  
 15 = speaking   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;             17 = maybe_interested 
 
+I threw classes 2, 8, 9, 10, 14, as they didn't seem relevant. Classes 3 and 4 were grouped as the non-picked up calls. the rest of the classes were grouped as the picked-up calls.  
 
-
-
+## Exploratory Data Analysis 
 I first made an exploratory data analysis to see if there are dependencies between the pick-up ratio
 and the features. It looked like the pick-up rate depends on.... However, I suspected that this dependecy may
 be some averaging over.... Thus, I plotted the pick-up rate vs. hour for the 2 area codes with the highest 
 number of calls.
 
+## Machine Learning
 Even though things where not clear in the exploratory data analysis, I applied machine learning classification
 techniques to perhaps identify more complex dependencies that were missed using the exploratory data analysis,
 as the depend on a combination of many of the features.
 
 
-
 Text mining of the companies names. where I made exploratory data analysis for companies with many calls, and looked 
 at the pick-up rate vs.  hour, and I grouped companies that look similar (by some word) and inserted it as a feature
 for the ML techniques I used.
-
 
 
 Feature importance.
@@ -73,7 +75,9 @@ Dimension reduction
 
 Testing feature by feature to have more data.
 
+It turns out that it is difficult...
 
+## ???
 
 | Feature        | \# of categories| 
 | ---------------|:--------------:| 
@@ -97,14 +101,12 @@ an area code is an average over the pick-up ratio over various buisinesses. Each
 operate at different parts of the day. Thus, te dependency on the business ... may be more relevant than 
 the area code.
 
-
-
 The phone number out of which the call was made was initially also a feature that I suspected that should
 have some predicting power. I speculate that this is not very true since people first care if the 
 number is identified. Then they care if the number os flagged by some app as spam, etc. If the number is
 neither identified nor flagged, they care less what is the exact number.
 
-
+## Pivoting the first objective - going back to exploratory data analysis
 
 Objective that can met and is very valuable for the company.
 Choosing the two features with the fewest number of categories, and cleaning the data 
@@ -112,6 +114,8 @@ only if there were NaNs in their elements. Leaving more data, and less features.
 time and making exploratory data analysis of the pick-up ratio over these two features.
 ![](https://github.com/Doron-L/PriceOfCall/blob/master/pickup_ratio_vs_industry_png)
 ![](https://github.com/Doron-L/PriceOfCall/blob/master/pickup_ratio_vs_campaign_type_png)
+
+
 
 ![](https://github.com/Doron-L/PriceOfCall/blob/master/price_smoothed_vs_industry_n_campaign_type_png)
 
