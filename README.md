@@ -102,7 +102,8 @@ Number of area codes:                          294
 Number of companies:                         15993
 Number of titles:                             1797
 Number of industries:                           28
-| Feature        | # of categories| 
+
+| Feature        | number of categories| 
 | ---------------|:--------------:| 
 | from_numb      | 258            | 
 | campaign type  | 5              | 
