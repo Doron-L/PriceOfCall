@@ -45,13 +45,13 @@ country            Title
 13 = completed_fu_inperson &emsp;    9 = wrong_number
 
 **try again**                  **failed**  
-1 = call_back_later  &emsp;          3 = no_answer  
-2 = busy             &emsp;&emsp;    8 = no_service  
-4 = voicemail        &emsp;          14 = technical_issues  
+1 = call_back_later  &emsp;&emsp;          3 = no_answer  
+2 = busy             &emsp;&emsp;&emsp;&emsp;&emsp;    8 = no_service  
+4 = voicemail        &emsp;&emsp;&emsp;          14 = technical_issues  
 16 = alternative_phone &emsp;        10 =  untried 
 
 **speaking**                   **interested**  
-15 = speaking   &emsp;               17 = maybe_interested 
+15 = speaking   &emsp;&emsp;&emsp;               17 = maybe_interested 
 
 
 
