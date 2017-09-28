@@ -95,13 +95,7 @@ Dimension reduction
 
 Testing feature by feature to have more data.
 
-Feature                                 # of categories 
-Number of from_numb:                           258
-Number of campaign type:                         5
-Number of area codes:                          294
-Number of companies:                         15993
-Number of titles:                             1797
-Number of industries:                           28
+
 
 | Feature        | \# of categories| 
 | ---------------|:--------------:| 
@@ -112,10 +106,10 @@ Number of industries:                           28
 | industries     | 28             |  
 
 
-The amount of data data:
-Data size: 320k calls
-Cleaned data:  <40k calls
-Picked-up: < 15k calls
+The amount of data  
+Data size: 320k calls  
+Cleaned data:  <40k calls  
+Picked-up: < 15k calls  
     
 In addition to the lack of enough data, the features didn't seem to have a lot of predicted power.
 I tried to speculate why two features that initially I thought will have information didn't have.
