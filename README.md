@@ -2,18 +2,18 @@
 
 ![](https://github.com/Doron-L/PriceOfCall/blob/master/price_smoothed_vs_industry_n_campaign_type_png)
 
-Introduction
+##Introduction
 During my fellowship at Insight Data Science I took on a two weeks consulting project for Upcall,
 a B2B telemarketing and sales company. Upcall wanted to get insights from their data. It made sense to 
 optimize the time when a specific number is being called in order to increase pick up rate (probability 
 that someone answers the phone).
 
 
-The Problem
+##The Problem
 
 
 
-Data Acquisition
+##Data Acquisition
 A first data set was givven by Upcall. After I examined the data... predictive power for the purpose of...
 I asked for features that may help. There where two more rounds where they sent me two more sets of features.
 
@@ -21,6 +21,7 @@ I asked for features that may help. There where two more rounds where they sent 
 The Data (features)
 
 1st data batch     2nd data batch
+--------------     -------------
 id                 Company name
 duration 
 called_at          3rd data batch
