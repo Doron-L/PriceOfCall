@@ -18,10 +18,9 @@ A first data set was givven by Upcall. After I examined the data... predictive p
 I asked for features that may help. There where two more rounds where they sent me two more sets of features.
 
 
-The Data (features)
+### The Data (features)
 
 1st data batch     2nd data batch
---------------     -------------
 id                 Company name
 duration 
 called_at          3rd data batch
@@ -39,23 +38,23 @@ country            Title
 
 
 
-The Data (targets)
-# completed 
+### The Data (targets)
+**completed** 
 0 = completed  
 11 = completed_fu_call  
 12 = completed_fu_email  
 13 = completed_fu_inperson  
 
-# try again  
+**try again**  
 1 = call_back_later  
 2 = busy  
 4 = voicemail  
 16 = alternative_phone  
 
-# speaking  
-15 = speaking  
+**speaking**  
+::15 = speaking::  
 
-# not interested  
+**not interested**  
 5 = hungup  
 6 = not_interested  
 7 = dnc (do not call)  
