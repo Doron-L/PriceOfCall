@@ -30,6 +30,10 @@ For our objective, we need a binary target: 0 and 1, for a non-picked-up and a p
 
 I threw classes 2, 8, 9, 10, 14, as they didn't seem relevant. Classes 3 and 4 were grouped as the non-picked up calls. the rest of the classes were grouped as the picked-up calls. The ratio between the calls that were not picked-up to the ones that were was about 2/1. 
 
+## Cleaning the data
+
+The main cleaning challenge was to deal with many NaNs. One of the main reasons for having NaNs is the fact that Upcall started to collect information about the different features at different times. Thus, features that were started to be collected at later times have many NaNs. My strategy was to remove calls that have NaN's in any of the features that are relevant for the specific analysis.
+
 ## Exploratory Data Analysis 
 
 I first looked at the country feature. There were calls to many different countries, but only the US and GB had more than 100 calls each. More specifically, there were ~300k and 400 calls to the US and GB, respectively. Since these calls are further divided to the many other features, I removed GB as well.  
@@ -91,7 +95,7 @@ neither identified nor flagged, they care less what is the exact number.
 
 It turns out that it is difficult...
 
-## Pivoting the first objective - going back to exploratory data analysis
+## ???Pivoting??? the first objective - going back to exploratory data analysis
 
 In order to look for valuable objective that can be found from this data set, I wanted to work with fewer features and more data. Thus, I chose the two features with the fewest number of categories, and cleaning the data 
 only if there were NaNs in their elements. Leaving more data, and less features. Thus, leaving the emphasize over 
@@ -100,6 +104,8 @@ time and making exploratory data analysis of the pick-up ratio over these two fe
 We can see that there is a significant difference in the pick-up ratio between the different industries, as well as between different campaign types.
 ![](https://github.com/Doron-L/PriceOfCall/blob/master/pickup_ratio_vs_industry_png)
 ![](https://github.com/Doron-L/PriceOfCall/blob/master/pickup_ratio_vs_campaign_type_png)
+The ... black lines over each bar are the 1 sigma uncertainty...
+
 
 The relative pick-up ratio can be interpreted as the relative effort necessitated to get to some pick-up ratio. The two dependencies on the industry and campaign type can be combined to the relative effort ...
 
