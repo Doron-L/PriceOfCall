@@ -9,7 +9,7 @@ that someone answers the phone).
 
 
 ## The Data 
-Upcall sent to me about 320k calls with the following features: the call id, duration, and time and date, the number out of which the call was made, the call country destination, area code, the industry of the buisness, campaign tyoe, and the title of the person getting the call. 
+Upcall sent to me about 320k calls with the following features: the call id, duration, and time and date, the number out of which the call was made, the call country destination, area code, company name, the industry of the business, campaign type, and the title of the person getting the call. 
 
 For our objective, we need a binary target: 0 and 1, for a non-picked-up and a picked-up call, respectively. However, in the target, there were 17 different categories:
 
@@ -39,15 +39,21 @@ Then I made an exploratory data analysis to see if there are dependencies betwee
 
 A similar insights are found when the pick-up ratio vs. hour (or any other time measure) is ploted for the different categories of another feature. Thus, the conclusion here is that, from these data, it is risky to infer anything from the time tends we see, and that the dependency of the pick-up ratio may depend on more than one or two features and maybe also depend in a more complex way.
 
+## Feature engineering the campany name
+
+I feature engineered the company name in two different ways. In one way, I took only the companies that had many calls (more than???), and used them as the different categories on the feature. In the second way, I grouped the different names by domain kowledge. For example, companies with the word restuarant were grouped together, as company names with the word hotel or inn. Then I removed groups with less than 100 calls. 
 
 ## Machine Learning
-Even though the dependencies between the pick-up ratio and the various feature where not clear in the exploratory data analysis, I applied machine learning classification techniques to perhaps identify more complex dependencies that were missed using the exploratory data analysis, as the depend on a combination of many of the features. I started with a logistic regression and then tried also random forest. None of them gave an accuracy (which is the releant metric in this case, as we care about...) that is significantly higher than the one obtained by predicting all calls not to be picked.  non-pick-up, which is the larger class.
+Even though the dependencies between the pick-up ratio and the various feature where not clear in the exploratory data analysis, I applied machine learning classification techniques to perhaps identify more complex dependencies that were missed using the exploratory data analysis, as the depend on a combination of many of the features. 
 
 
 
-Text mining of the companies names. where I made exploratory data analysis for companies with many calls, and looked 
-at the pick-up rate vs.  hour, and I grouped companies that look similar (by some word) and inserted it as a feature
-for the ML techniques I used.
+
+I started with a logistic regression and then tried also random forest. None of them gave an accuracy (which is the releant metric in this case, as we care about...) that is significantly higher than the one obtained by predicting all calls not to be picked.  non-pick-up, which is the larger class.
+
+
+
+
 
 ??? number the ones below and give a few explanations.
 Feature importance.
