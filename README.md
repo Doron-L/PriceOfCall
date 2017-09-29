@@ -50,7 +50,7 @@ For our objective, we need a binary target: 0 and 1, for a non-picked-up and a p
 
 ??? meaning of the targets
 
-I threw classes 2, 8, 9, 10, 14, as they didn't seem relevant. Classes 3 and 4 were grouped as the non-picked up calls. the rest of the classes were grouped as the picked-up calls.  
+I threw classes 2, 8, 9, 10, 14, as they didn't seem relevant. Classes 3 and 4 were grouped as the non-picked up calls. the rest of the classes were grouped as the picked-up calls. The ratio between the calls that were not picked-up to the ones that were was about 2/1. 
 
 ## Exploratory Data Analysis 
 I first looked at the country feature. There were calls to many different countries, but only the US and GB had more than 100 calls each. More specifically, after cleaning ..., there were 299163 and 381 calls to the US and GB, respectively. Since these calls are further divided to the many other features, I removed GB as well. 
@@ -70,6 +70,9 @@ Even though things where not clear in the exploratory data analysis, I applied m
 techniques to perhaps identify more complex dependencies that were missed using the exploratory data analysis,
 as the depend on a combination of many of the features.
 
+In order to estimate the probability for a call to be picked-up at any givven time, I applied ML classification techniques. I started with a logistic regression and then tried also random forest. None gave me an accuracy (which is the releant metric in this case, as we care about...) that is significantly higher than the one obtained by predicting all calls not to be picked.  non-pick-up, which is the larger class.
+
+
 
 Text mining of the companies names. where I made exploratory data analysis for companies with many calls, and looked 
 at the pick-up rate vs.  hour, and I grouped companies that look similar (by some word) and inserted it as a feature
@@ -78,11 +81,14 @@ for the ML techniques I used.
 ??? number the ones below and give a few explanations.
 Feature importance.
 
-Applying ML classification techniques: Logistic regression, random forest (hot-coding and not hot-coding).
 
-Dimension reduction
 
-Testing feature by feature to have more data.
+In order to finght the large number of feature, I applied a dimension reduction methon, principal component analysis. Since I didn't want to loose ... to interperate the feature, I applied the PCA in blocks, where I reduced the dimension of features of the same kind together. For example, I took all the area codes categories and reduced their dimentions. 
+
+In order to fight to low amount of data after cleaning, I tested the ... on feature by feature, where I clean the data only by that feature.
+
+
+The accuracy (which is the releant metric in this case, as we care about...), was not significantly higher than the one obtained by predicting all result... non-pick-up, which is the larger class.
 
 It turns out that it is difficult...
 
