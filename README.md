@@ -46,9 +46,6 @@ I feature engineered the company name in two different ways. In one way, I took 
 ## Machine Learning
 Even though the dependencies between the pick-up ratio and the various feature where not clear in the exploratory data analysis, I applied machine learning classification techniques to perhaps identify more complex dependencies that were missed using the exploratory data analysis, as the depend on a combination of many of the features. 
 
-
-
-
 I started with a logistic regression and then tried also random forest. None of them gave an accuracy (which is the releant metric in this case, as we care about...) that is significantly higher than the one obtained by predicting all calls not to be picked.  non-pick-up, which is the larger class.
 
 
@@ -82,9 +79,10 @@ Data size: 320k calls
 Cleaned data:  <30-40k calls depending on the exact cleaning procedure  
 Picked-up: ~ 1/3 of the cleaned calls  
 
-One of the reasons we are left with a vey low number of calls after the cleaning is that the company started to collect different features at different times, amd so only the most recent calls have information in all their features. 
+One of the reasons we are left with a vey low number of calls after the cleaning is that Upcall started to collect different features at different times, and so only the most recent calls have information in all their features. 
     
-In addition to the lack of enough data, the features didn't seem to have a lot of predicted power.
+In addition to the lack of enough data, the features didn't seem to have a lot of predictive power, as non helped to predict with accuracy above the one obtained by...??? 
+
 I tried to speculate why two features that initially I thought will have information didn't have.
 The area code may have two problems. First, it may not represent the real physical location of the business,
 as phone numbers can be kept even if a person or a business move. Second, the pick-up ratio in 
@@ -99,12 +97,11 @@ neither identified nor flagged, they care less what is the exact number.
 
 ## Pivoting the first objective - going back to exploratory data analysis
 
-Objective that can met and is very valuable for the company.
-Choosing the two features with the fewest number of categories, and cleaning the data 
-only if there were NaNs in their elements. Leaving more data, and less features. Thus, leaving the emphsize over 
+In order to look for valuable objective that can be found from this data set, I wanted to work with fewer features and more data. Thus, I chose the two features with the fewest number of categories, and cleaning the data 
+only if there were NaNs in their elements. Leaving more data, and less features. Thus, leaving the emphasize over 
 time and making exploratory data analysis of the pick-up ratio over these two features.
 
-We can see tht there is a significant difference in the pick-up ratio between the different industries, as well as between different campaign types.
+We can see that there is a significant difference in the pick-up ratio between the different industries, as well as between different campaign types.
 ![](https://github.com/Doron-L/PriceOfCall/blob/master/pickup_ratio_vs_industry_png)
 ![](https://github.com/Doron-L/PriceOfCall/blob/master/pickup_ratio_vs_campaign_type_png)
 
