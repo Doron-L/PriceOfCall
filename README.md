@@ -54,7 +54,6 @@ I started with a logistic regression and then tried also random forest. None of 
 
 
 ??? number the ones below and give a few explanations.
-Feature importance.
 
 In order to fight the large number of feature, I applied a dimension reduction methon, principal component analysis. Since I wanted to still be able to interpret the features, I applied the PCA in blocks, where I reduced the dimension of features of the same kind together. For example, I took all the area codes categories and reduced their dimentions. In this way I reduced the number of features and kept their basic meaning.  
 
