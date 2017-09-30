@@ -2,7 +2,7 @@
 
 
 ## Introduction
-During my fellowship at Insight Data Science I took on a two weeks consulting project for Upcall,
+During my fellowship at Insight Data Science I took on a consulting project for Upcall,
 a B2B telemarketing and sales company. Upcall wanted to get insights from their data. It made sense to 
 firs try to optimize the time when a specific number is being called in order to increase pick up rate (probability 
 that someone answers the phone).
@@ -48,9 +48,9 @@ A similar insights are found when the pick-up ratio vs. hour (or any other time 
 All the features were categorical, and so it was strighforward to engenir them. For the logistic regression, I 1 hot-code them, while for the random forest, I only replaced the names of the different categories by numbers. The biggest challenge was to engineer the company name featyure. I feature engineered this feature in two different ways. In one way, I took the companies with the highest number of calls calls, made exploratory analysis, and saw if I understand the hour trends. There was no clear different hour trend for these different companies (???show figure???). In the second way, I grouped the different names by domain kowledge. For example, companies with the word restuarant were grouped together, as company names with the word hotel or inn. Then I removed groups with less than 100 calls and used it as one of the ML techniques features. 
 
 ## Machine Learning
-Even though the dependencies between the pick-up ratio and the various feature where not clear in the exploratory data analysis, I applied machine learning classification techniques to perhaps identify more complex dependencies that were missed using the exploratory data analysis, as the depend on a combination of many of the features. 
+Even though the dependencies between the pick-up ratio and the various features where not clear in the exploratory data analysis, I applied machine learning classification techniques to perhaps identify more complex dependencies that were missed using the exploratory data analysis, as the dependcy is on a combination of many of the features. 
 
-I started with a logistic regression and then tried also random forest. None of them gave an accuracy (which is the releant metric in this case, as we care about...) that is significantly higher than the one obtained by predicting all calls not to be picked.  non-pick-up, which is the larger class.
+I started with a logistic regression and then tried also random forest. None of them gave an accuracy (which is the releant metric in this case, as we care about...) that is significantly higher than the one obtained by predicting all calls not to be picked-up, which is the larger class.
 
 
 ??? number the ones below and give a few explanations.
@@ -96,26 +96,19 @@ It turns out that it is difficult...
 
 ## ???Pivoting??? the first objective - going back to exploratory data analysis
 
-In order to look for valuable objective that can be found from this data set, I wanted to work with fewer features and more data. Thus, I chose the two features with the fewest number of categories, and cleaning the data 
-only if there were NaNs in their elements. Leaving more data, and less features. Thus, leaving the emphasize over 
-time and making exploratory data analysis of the pick-up ratio over these two features.
+In order to look for valuable objective that can be found from this data set, I left the time features and looked at other ones. I looked at the industry and campaign type, as they have the fewest number of categories.  Thus, I chose the two features with the fewest number of categories, and cleaning the data only if there were NaNs in their elements. Leaving more data, and less features. Thus, leaving the emphasize over time and making exploratory data analysis of the pick-up ratio over these two features.
 
 We can see that there is a significant difference in the pick-up ratio between the different industries, as well as between different campaign types.
 ![](https://github.com/Doron-L/PriceOfCall/blob/master/pickup_ratio_vs_industry_png)
 ![](https://github.com/Doron-L/PriceOfCall/blob/master/pickup_ratio_vs_campaign_type_png)
-The ... black lines over each bar are the 1 sigma uncertainty...
+The ... black lines over each bar are the 1 sigma uncertainty... obtained by...
 
-
-The relative pick-up ratio can be interpreted as the relative effort necessitated to get to some pick-up ratio. The two dependencies on the industry and campaign type can be combined to the relative effort ...
-
-Thus,  
-The different levels of effor necessitated to invest in order to reach the same number of pick-up calls can be combined and give the relative effort that each project 
-
-This can be used to reject high-effort projects, or to have a more project-specific price scheme that takes into consideration the effort needed to be invested. In the following figure, I plotted the relative price/effort level needed for each project depanding on the different industry and campaign type. Due to the sparse nature of the data, I linearly interpolated and smoothed the relative price values.
+## The deliverable
+The relative pick-up ratio can be interpreted as the relative effort necessitated to get to some pick-up ratio. The two dependencies (on the industry and campaign type) can be combined and give the relative effort needed to be invested in each project dependign on these two features. The company can use this price/effort scheme in two different ways. They can either reject high-effort project, or to have a more project-specific price scheme that takes into consideration the effort needed to be invested. In the following figure, I plotted the relative price/effort level needed for each project depanding on the different industry and campaign type. Due to the sparse nature of the data, I linearly interpolated and smoothed the relative price values.
 ![](https://github.com/Doron-L/PriceOfCall/blob/master/price_smoothed_vs_industry_n_campaign_type_png)
 
-Still can be done:
-more features: company size, 
+## Further work that can be done
 
-text mining of the titles feature, in a similar way to the one I have done for companies.
-I thought that the companies feature should have more information, so I text mind it first.
+For having a price scheme that is more complex (depends on more features) and more accurate, there is a need for more data. In addition, more features with relevant information should be added. These features can be engineered from existing ones (e.g., text mining the title feature) or adding new ones (e.g., the size of the company and the sub-industry of the business).
+
+
