@@ -64,11 +64,11 @@ In order to fight to low amount of data stayed after the cleaning procedures, I 
 
 | Feature        | \# of categories| 
 | ---------------|:--------------:| 
-| from_numb      | 258            | 
+| from_phone_number      | 258            | 
 | campaign type  | 5              | 
-| area codes     | 294            |  
-| titles         | 15993          |  
-| industries     | 28             |  
+| area code      | 294            |  
+| title          | 15993          |  
+| industry       | 28             |  
 
 
 The amount of data  
@@ -107,7 +107,7 @@ The ... black lines over each bar are the 1 sigma uncertainty... obtained by...
 The relative pick-up ratio can be interpreted as the relative effort necessitated to get to some pick-up ratio. The two dependencies (on the industry and campaign type) can be combined and give the relative effort needed to be invested in each project dependign on these two features. The company can use this price/effort scheme in two different ways. They can either reject high-effort project, or to have a more project-specific price scheme that takes into consideration the effort needed to be invested. In the following figure, I plotted the relative price/effort level needed for each project depanding on the different industry and campaign type. Due to the sparse nature of the data, I linearly interpolated and smoothed the relative price values.
 ![](https://github.com/Doron-L/PriceOfCall/blob/master/price_smoothed_vs_industry_n_campaign_type_png)
 
-## Further work that can be done
+## Further work
 
 For having a price scheme that is more complex (depends on more features) and more accurate, there is a need for more data. In addition, more features with relevant information should be added. These features can be engineered from existing ones (e.g., text mining the title feature) or adding new ones (e.g., the size of the company and the sub-industry of the business).
 
