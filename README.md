@@ -8,7 +8,7 @@ firs try to optimize the time when a specific number is being called in order to
 that someone answers the phone).
 
 
-## The Data 
+## The data 
 Upcall sent to me about 320k calls with the following features: the call id, duration, and time and date, the number out of which the call was made, the call country destination, area code, company name, the industry of the business, campaign type, and the title of the person getting the call. 
 
 For our objective, we need a binary target: 0 and 1, for a non-picked-up and a picked-up call, respectively. However, in the target, there were 17 different categories:
@@ -34,7 +34,7 @@ I threw classes 2, 8, 9, 10, 14, as they didn't seem relevant. Classes 3 and 4 w
 
 The main cleaning challenge was to deal with many NaNs. One of the main reasons for having NaNs is the fact that Upcall started to collect information about the different features at different times. Thus, features that were started to be collected at later times have many NaNs. My strategy was to remove calls that have NaN's in any of the features that are relevant for the specific analysis.
 
-## Exploratory Data Analysis 
+## Exploratory data analysis 
 
 I first looked at the country feature. There were calls to many different countries, but only the US and GB had more than 100 calls each. More specifically, there were ~300k and 400 calls to the US and GB, respectively. Since these calls are further divided to the many other features, I removed GB as well.  
 
@@ -47,7 +47,7 @@ A similar insights are found when the pick-up ratio vs. hour (or any other time 
 
 All the features were categorical, and so it was strighforward to engenir them. For the logistic regression, I 1 hot-code them, while for the random forest, I only replaced the names of the different categories by numbers. The biggest challenge was to engineer the company name featyure. I feature engineered this feature in two different ways. In one way, I took the companies with the highest number of calls calls, made exploratory analysis, and saw if I understand the hour trends. There was no clear different hour trend for these different companies (???show figure???). In the second way, I grouped the different names by domain kowledge. For example, companies with the word restuarant were grouped together, as company names with the word hotel or inn. Then I removed groups with less than 100 calls and used it as one of the ML techniques features. 
 
-## Machine Learning
+## Machine learning
 Even though the dependencies between the pick-up ratio and the various features where not clear in the exploratory data analysis, I applied machine learning classification techniques to perhaps identify more complex dependencies that were missed using the exploratory data analysis, as the dependcy is on a combination of many of the features. 
 
 I started with a logistic regression and then tried also random forest. None of them gave an accuracy (which is the releant metric in this case, as we care about...) that is significantly higher than the one obtained by predicting all calls not to be picked-up, which is the larger class.
@@ -94,7 +94,7 @@ neither identified nor flagged, they care less what is the exact number.
 
 It turns out that it is difficult...
 
-## ???Pivoting??? the first objective - going back to exploratory data analysis
+## Back to exploratory data analysis
 
 In order to look for valuable objective that can be found from this data set, I left the time features and looked at other ones. I looked at the industry and campaign type, as they have the fewest number of categories.  Thus, I chose the two features with the fewest number of categories, and cleaning the data only if there were NaNs in their elements. Leaving more data, and less features. Thus, leaving the emphasize over time and making exploratory data analysis of the pick-up ratio over these two features.
 
