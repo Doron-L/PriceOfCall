@@ -50,7 +50,7 @@ All the features were categorical, and so it was straightforward to engineer the
 ## Machine learning
 Even though the dependencies between the pick-up ratio and the various features where not clear in the exploratory data analysis, I applied machine learning classification techniques to perhaps identify more complex dependencies that were missed using the exploratory data analysis, as the dependency is on a combination of many of the features. 
 
-I started with a logistic regression and then tried also random forest. None of them gave an accuracy (which is the relevant metric in this case, as we care about...???) that is significantly higher than the one obtained by predicting all calls not to be picked-up, which is the larger class.
+I started with a logistic regression and then tried also random forest. None of them gave an accuracy (which is the relevant metric for our objective) that is significantly higher than the one obtained by predicting all calls not to be picked-up, which is the larger class.
 
 In order to fight the large number of feature, I applied a dimension reduction method, principal component analysis. Since I wanted to still be able to interpret the features, I applied the PCA in blocks, where I reduced the dimension of features of the same kind together. For example, I took all the area codes categories and reduced their dimensions. In this way I reduced the number of features and kept their basic meaning.  
 
@@ -83,14 +83,14 @@ have some predicting power. I speculate that this is not very true since people 
 number is identified. Then they care if the number is flagged by some app as spam, etc. If the number is
 neither identified nor flagged, they care less what is the exact number.
 
-## Back to exploratory data analysis
+## Back to an exploratory data analysis
 
 In order to look for valuable objective that can be found from this data set, I left the time features and looked at other ones. I looked at the industry and campaign type, as they have the fewest number of categories.  Thus, I chose the two features with the fewest number of categories, and cleaning the data only if there were NaNs in their elements. Leaving more data, and less features. Thus, leaving the emphasize over time and making exploratory data analysis of the pick-up ratio over these two features.
 
 We can see that there is a significant difference in the pick-up ratio between the different industries, as well as between different campaign types.
 ![](https://github.com/Doron-L/PriceOfCall/blob/master/pickup_ratio_vs_industry_png)
 ![](https://github.com/Doron-L/PriceOfCall/blob/master/pickup_ratio_vs_campaign_type_png)
-The ... black lines over each bar are the 1 sigma uncertainty... obtained by...
+The black lines over each bar are the 1 sigma uncertainty obtained by bootstrapping. 
 
 ## The deliverable
 The relative pick-up ratio can be interpreted as the relative effort necessitated to get to some pick-up ratio. The two dependencies (on the industry and campaign type) can be combined and give the relative effort needed to be invested in each project depending on these two features. The company can use this price/effort scheme in two different ways. They can either reject high-effort project, or to have a more project-specific price scheme that takes into consideration the effort needed to be invested. In the following figure, I plotted the relative price/effort level needed for each project depending on the different industry and campaign type. Due to the sparse nature of the data, I linearly interpolated and smoothed the relative price values.
