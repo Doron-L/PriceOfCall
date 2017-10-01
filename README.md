@@ -95,7 +95,7 @@ We can see that there is a significant difference in the pick-up ratio between t
 The black lines over each bar are the 1 sigma uncertainty obtained by bootstrapping. 
 
 ## The deliverable
-The relative pick-up ratio can be interpreted as the relative effort necessitated to get to some pick-up ratio. The two dependencies (industry and campaign type) can be combined and give the relative effort needed to be invested in each project depending on these two features. The company can use this price/effort scheme in two different ways. They can either reject high-effort projects, or can have a more project-specific price scheme that takes into consideration the effort needed to be invested. In the following figure, I plotted the relative price/effort level needed for each project depending on the different industry and campaign type. Due to the sparse nature of the data, I linearly interpolated and smoothed the relative price values.
+The two dependencies (industry and campaign type) can be combined and give the relative effort required to reach a certain pick-up ratio in each project depending on these two features. The company can use this price/effort scheme in two different ways. They can either reject high-effort projects, or can have a more project-specific price scheme that takes into consideration the effort required to reach a certain pick-up ratio. In the following figure, I plotted the relative price/effort level needed for each project depending on the different industry and campaign type. Due to the sparse nature of the data, I linearly interpolated and smoothed the relative price values.
 ![](https://github.com/Doron-L/PriceOfCall/blob/master/price_smoothed_vs_industry_n_campaign_type_png)
 
 ## Future work
