@@ -70,8 +70,7 @@ The number of calls and the specific features in the data set were not enough fo
 | industry       | 28             |  
 
 
-The amount of data:
-------------------
+**The number of calls**:
 Data size: 320k calls  
 Cleaned data:  <30-40k calls depending on the exact cleaning procedure  
 Picked-up: ~ 1/3 of the cleaned calls  
