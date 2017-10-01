@@ -57,9 +57,9 @@ In order to fight the large number of feature, I applied a dimension reduction m
 In order to fight to low amount of data stayed after the cleaning procedures, I classified the data by taking a lower number of features, where I cleaned the data only by the features I took. Since I cleaned the data by less features, more data was left. However, the accuracy was still not significantly higher than the one obtained by predicting that all the labels will be 0.
 
 
-## ML aftermath
+## Machine learning aftermath
 
-The ML procedure didn't ... 
+The number of calls and the specific features in the data set were not enough for an estimation for the pick-up probability. Let's look again at some of the features and the number of calls.  
 
 | Feature        | \# of categories| 
 | ---------------|:--------------:| 
@@ -70,7 +70,8 @@ The ML procedure didn't ...
 | industry       | 28             |  
 
 
-The amount of data  
+The amount of data:
+------------------
 Data size: 320k calls  
 Cleaned data:  <30-40k calls depending on the exact cleaning procedure  
 Picked-up: ~ 1/3 of the cleaned calls  
