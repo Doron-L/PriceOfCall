@@ -45,22 +45,21 @@ A similar insights are found when the pick-up ratio vs. hour (or any other time 
 
 ## Feature engineering
 
-All the features were categorical, and so it was straightforward to engineer them. For the logistic regression, I 1 hot-code them, while for the random forest, I only replaced the names of the different categories by numbers. The biggest challenge was to engineer the company name feature. I feature engineered this feature in two different ways. In one way, I took the companies with the highest number of calls calls, made exploratory analysis, and saw if I understand the hour trends. There was no clear different hour trend for these different companies (???show figure???). In the second way, I grouped the different names by domain knowledge. For example, companies with the word restaurant were grouped together, as company names with the word hotel or inn. Then I removed groups with less than 100 calls and used it as one of the ML techniques features. 
+All the features were categorical, and so it was straightforward to engineer them. For the logistic regression, I 1 hot-code them, while for the random forest, I only replaced the names of the different categories by numbers. The biggest challenge was to engineer the company name feature. I feature engineered this feature in two different ways. In one way, I took the companies with the highest number of calls calls, made exploratory analysis, and saw if I understand the hour trends. There was no clear different hour trend for these different companies. In the second way, I grouped the different names by domain knowledge. For example, companies with the word restaurant were grouped together, as company names with the word hotel or inn. Then I removed groups with less than 100 calls and used it as one of the ML techniques features. 
 
 ## Machine learning
 Even though the dependencies between the pick-up ratio and the various features where not clear in the exploratory data analysis, I applied machine learning classification techniques to perhaps identify more complex dependencies that were missed using the exploratory data analysis, as the dependency is on a combination of many of the features. 
 
-I started with a logistic regression and then tried also random forest. None of them gave an accuracy (which is the relevant metric in this case, as we care about...) that is significantly higher than the one obtained by predicting all calls not to be picked-up, which is the larger class.
-
-
-??? number the ones below and give a few explanations.
+I started with a logistic regression and then tried also random forest. None of them gave an accuracy (which is the relevant metric in this case, as we care about...???) that is significantly higher than the one obtained by predicting all calls not to be picked-up, which is the larger class.
 
 In order to fight the large number of feature, I applied a dimension reduction method, principal component analysis. Since I wanted to still be able to interpret the features, I applied the PCA in blocks, where I reduced the dimension of features of the same kind together. For example, I took all the area codes categories and reduced their dimensions. In this way I reduced the number of features and kept their basic meaning.  
 
 In order to fight to low amount of data stayed after the cleaning procedures, I classified the data by taking a lower number of features, where I cleaned the data only by the features I took. Since I cleaned the data by less features, more data was left. However, the accuracy was still not significantly higher than the one obtained by predicting that all the labels will be 0.
 
 
-## ???
+## ML aftermath
+
+The ML procedure didn't ... 
 
 | Feature        | \# of categories| 
 | ---------------|:--------------:| 
@@ -75,24 +74,14 @@ The amount of data
 Data size: 320k calls  
 Cleaned data:  <30-40k calls depending on the exact cleaning procedure  
 Picked-up: ~ 1/3 of the cleaned calls  
-
-One of the reasons we are left with a very low number of calls after the cleaning is that Upcall started to collect different features at different times, and so only the most recent calls have information in all their features. 
-    
-In addition to the lack of enough data, the features didn't seem to have a lot of predictive power, as non helped to predict with accuracy above the one obtained by...??? 
-
-I tried to speculate why two features that initially I thought will have information didn't have.
-The area code may have two problems. First, it may not represent the real physical location of the business,
-as phone numbers can be kept even if a person or a business move. Second, the pick-up ratio in 
-an area code is an average over the pick-up ratio over various businesses. Each business may
-operate at different parts of the day. Thus, the dependency on the business ... may be more relevant than 
-the area code.
+   
+We can see that we have a huge number of categories with respect to the number of calls left in the cleaned data set. However, it is still surprising at some level that features, such as the area code and the phone number from which the call was made, that initially I suspected to have some predictive power, eventually didn't have. Here I  speculate why these two features don't have predictive power. The area code may have two problems. First, it may not represent the real physical location of the business, as phone numbers can be kept even if a person or a business move. Second, the pick-up ratio in 
+an area code is an average over the pick-up ratio over various businesses. Each business may operate at different parts of the day. Thus, the dependency on the business core may be more relevant than the area code.
 
 The phone number out of which the call was made was initially also a feature that I suspected that should
 have some predicting power. I speculate that this is not very true since people first care if the 
 number is identified. Then they care if the number is flagged by some app as spam, etc. If the number is
 neither identified nor flagged, they care less what is the exact number.
-
-It turns out that it is difficult...
 
 ## Back to exploratory data analysis
 
