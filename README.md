@@ -32,18 +32,20 @@ I ignored calls with classes 2, 8, 9, 10, 14, as they aren't relevant to the pro
 
 ## Cleaning the data
 
-The main cleaning challenge was to deal with many NaNs. One of the main reasons for having NaNs is the fact that Upcall started to collect different features at different times. Thus, the ones that were started to be collected at later times have many NaNs. My strategy was to remove calls that have NaN's in any of the features that are relevant for the specific analysis.
+The main cleaning challenge was to deal with many NaNs. One of the main reasons for having NaNs is the fact that Upcall started to collect different features at different times. Thus, the features that were started to be collected at later times have many NaNs. My strategy was to remove calls that have NaN's in any of the features that are relevant for the specific analysis.
 
 ## Exploratory data analysis 
 
-I first looked at the country feature. There were calls to many different countries, but only the US and GB had more than 100 calls each. More specifically, there were ~300k and 400 calls to the US and GB, respectively. Since these calls are further divided to the many other features, I removed GB as well.  
+I first looked at the country feature. There were calls to many different countries. However, ~300k of the calls were to the US, and no other country had more than 400 calls. Thus, left only calls that were to the US.  
+
+but only the US and GB had more than 100 calls each. More specifically, there were ~300k and 400 calls to the US and GB, respectively. Since these calls are further divided to the many other features, I removed GB as well. Since ... a much larger number than 400 is needed per country   
 
 Then I made an exploratory data analysis to see if there are dependencies between the pick-up ratio and the different features. I looked at the dependencies on time (e.g., year, month, day of week, and hour), as this feature is most relevant to our first objective. At a first glance, we can immediately the human eye can identify some trends. For example, by looking at the dependency of the pick-up ratio over the hour, we see that the pick-up ratio is higher at the middle of the working day (except for some increase at 19:00, see the black curve in the following figure), which makes perfect sense as Upcall calls business, and most of them are more active in the middle of the day (comparing to early in the morning or late in the evening). However, when we look at this dependency in the three area codes with the highest number of calls, we see that the dependency of the pick-up ratio over time is very different between the different area code. Note that bins with less than 100 calls were removed. 
 ![](https://github.com/Doron-L/PriceOfCall/blob/master/pickup_ratio_vs_hour_diff_area_codes_png)
 
 A similar conclusion is found when the pick-up ratio vs. hour (or any other time measure) is plotted for the different categories of another feature. Thus, the conclusion here is that, from these data, it is risky to infer anything from the time trends we see, and that the pick-up ratio may depend on more than one or two features and maybe also depend in a more complex way.
 
-## Feature engineering
+## Preprocessing
 
 All the features were categorical, and so it was straightforward to engineer them. For the logistic regression, I 1 hot-coded them, while for the random forest, I only replaced the names of the different categories by numbers. The biggest challenge was to engineer the company name feature. I feature engineered it in two different ways. In one way, I took the companies with the highest number of calls, performed exploratory analysis, and saw if I understand the hour trends. There was no clear different hour trend for these different companies. In the second way, I grouped the different names by domain knowledge. For example, companies with the word restaurant were grouped together, as company names with the word hotel or inn. Then I removed groups with less than 100 calls and used it as one of the ML techniques features. 
 
@@ -54,7 +56,7 @@ I started with a logistic regression and then tried also random forest. None of 
 
 In order to reduce the number of features, I used principal component analysis. Since I wanted to still be able to interpret the features, I applied the PCA in blocks, where I reduced the dimension of features of the same kind together. For example, I took all the area codes categories and reduced their dimensions. In this way I reduced the number of features and kept their basic meaning.  
 
-In order to fight to low amount of data left after the cleaning procedures, I classified the data by taking a lower number of features, where I cleaned the data only by the features I took. Since I cleaned the data by less features, more data was left. However, the accuracy was still not significantly higher than the one obtained by predicting that all the labels will be 0.
+In order to increase the amount of data left after the cleaning procedures, I classified the data by taking only features that have low numbers of NaNs (i.e., were collected for a longer time period). However, the accuracy was still not significantly higher than the one obtained by predicting that all the labels will be 0.
 
 
 ## Machine learning aftermath
@@ -85,7 +87,7 @@ neither identified nor flagged, they care less what is the exact number.
 
 ## Back to an exploratory data analysis
 
-In order to look for valuable objective that can be found from this data set, I left the time features and looked at other ones. I looked at the industry and campaign type, as they have the fewest number of categories.  Thus, I chose the two features with the fewest number of categories, and cleaning the data only if there were NaNs in their elements. Leaving more data and less features. Thus, leaving the emphasize over time and performing exploratory data analysis of the pick-up ratio over these two features.
+In order to look for valuable objective that can be found from this data set, I left the time and date features and looked at other ones. I looked at the industry and campaign type, as they have the fewest number of categories.  Thus, I chose the two features with the fewest number of categories, and cleaning the data only if there were NaNs in their elements. Leaving more data and less features. Then, I performed exploratory data analysis of the pick-up ratio over these two features.
 
 We can see that there is a significant difference in the pick-up ratio between the different industries, as well as between different campaign types.
 ![](https://github.com/Doron-L/PriceOfCall/blob/master/pickup_ratio_vs_industry_png)
