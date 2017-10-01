@@ -4,7 +4,7 @@
 ## Introduction
 During my fellowship at Insight Data Science I took on a consulting project for Upcall,
 a B2B telemarketing and sales company. Upcall wanted to get insights from their data. It made sense to 
-firs try to optimize the time when a specific number is being called in order to increase pick up rate (probability 
+first try to optimize the time when a specific number is being called in order to increase pick up rate (probability 
 that someone answers the phone).
 
 
@@ -28,11 +28,11 @@ For our objective, we need a binary target: 0 and 1, for a non-picked-up and a p
 **Speaking**                   **Interested**  
 15 = speaking   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;             17 = maybe_interested 
 
-I threw classes 2, 8, 9, 10, 14, as they didn't seem relevant. Classes 3 and 4 were grouped as the non-picked up calls. the rest of the classes were grouped as the picked-up calls. The ratio between the calls that were not picked-up to the ones that were was about 2/1. 
+I threw classes 2, 8, 9, 10, 14, as they didn't seem relevant. Classes 3 and 4 were grouped as the non-picked up calls. The rest of the classes were grouped as the picked-up calls. The ratio between the calls that were not picked-up to the ones that were was about 2/1. 
 
 ## Cleaning the data
 
-The main cleaning challenge was to deal with many NaNs. One of the main reasons for having NaNs is the fact that Upcall started to collect information about the different features at different times. Thus, features that were started to be collected at later times have many NaNs. My strategy was to remove calls that have NaN's in any of the features that are relevant for the specific analysis.
+The main cleaning challenge was to deal with many NaNs. One of the main reasons for having NaNs is the fact that Upcall started to collect different features at different times. Thus, the ones that were started to be collected at later times have many NaNs. My strategy was to remove calls that have NaN's in any of the features that are relevant for the specific analysis.
 
 ## Exploratory data analysis 
 
