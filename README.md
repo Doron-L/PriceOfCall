@@ -36,9 +36,8 @@ The main cleaning challenge was to deal with many NaNs. One of the main reasons 
 
 ## Exploratory data analysis 
 
-I first looked at the country feature. There were calls to many different countries. However, ~300k of the calls were to the US, and no other country had more than 400 calls. Thus, left only calls that were to the US.  
+I first looked at the country feature. There were calls to many different countries. However, ~300k of the calls were to the US, and no other country had more than 400 calls. Thus, I left only calls that were to the US.
 
-but only the US and GB had more than 100 calls each. More specifically, there were ~300k and 400 calls to the US and GB, respectively. Since these calls are further divided to the many other features, I removed GB as well. Since ... a much larger number than 400 is needed per country   
 
 Then I made an exploratory data analysis to see if there are dependencies between the pick-up ratio and the different features. I looked at the dependencies on time (e.g., year, month, day of week, and hour), as this feature is most relevant to our first objective. At a first glance, we can immediately the human eye can identify some trends. For example, by looking at the dependency of the pick-up ratio over the hour, we see that the pick-up ratio is higher at the middle of the working day (except for some increase at 19:00, see the black curve in the following figure), which makes perfect sense as Upcall calls business, and most of them are more active in the middle of the day (comparing to early in the morning or late in the evening). However, when we look at this dependency in the three area codes with the highest number of calls, we see that the dependency of the pick-up ratio over time is very different between the different area code. Note that bins with less than 100 calls were removed. 
 ![](https://github.com/Doron-L/PriceOfCall/blob/master/pickup_ratio_vs_hour_diff_area_codes_png)
