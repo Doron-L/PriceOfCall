@@ -15,9 +15,9 @@ For our objective, we need a binary target: 0 and 1, for a non-picked-up and a p
 
 **Completed**                  **Not interested**  
 0 = completed  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;   5 = hungup  
-11 = completed_fu_call  &emsp;&emsp;&emsp;&nbsp;       6 = not_interested  
-12 = completed_fu_email &emsp;&emsp;&nbsp;       7 = dnc (do not call)  
-13 = completed_fu_inperson &emsp;    9 = wrong_number
+11 = completed_full_call  &emsp;&emsp;&emsp;&nbsp;       6 = not_interested  
+12 = completed_full_email &emsp;&emsp;&nbsp;       7 = dnc (do not call)  
+13 = completed_full_inperson &emsp;    9 = wrong_number
 
 **Try again**                  **Failed**  
 1 = call_back_later  &emsp;&emsp;&emsp;&emsp;&emsp;          3 = no_answer  
@@ -85,7 +85,7 @@ neither identified nor flagged, they care less what is the exact number.
 
 ## Back to an exploratory data analysis
 
-**???In order to look for valuable objective that can be found from this data set???**, I left the time and date features and looked at other ones. I looked at the industry and campaign type, as they have the fewest number of categories.  Thus, I chose the two features with the fewest number of categories, and cleaning the data only if there were NaNs in their elements. Leaving more data and less features. Then, I performed exploratory data analysis of the pick-up ratio over these two features.
+As it was challenging to have a time prediction, I left the time and date features and looked at other ones. I looked at the industry and campaign type, as they have the fewest number of categories.  Thus, I chose the two features with the fewest number of categories, and cleaning the data only if there were NaNs in their elements. Leaving more data and less features. Then, I performed exploratory data analysis of the pick-up ratio over these two features.
 
 We can see that there is a significant difference in the pick-up ratio between the different industries, as well as between different campaign types.
 ![](https://github.com/Doron-L/PriceOfCall/blob/master/pickup_ratio_vs_industry_png)
