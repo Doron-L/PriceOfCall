@@ -2,14 +2,10 @@
 
 
 ## Introduction
-During my fellowship at Insight Data Science I took on a consulting project for Upcall,
-a B2B telemarketing and sales company. Upcall wanted to get insights from their data. It made sense to 
-first try to optimize the time when a specific number is being called in order to increase pick up rate (probability 
-that someone answers the phone).
-
+In the fall of 2017, I did some data science consulting for Upcall, a B2B telemarketing and sales company. Upcall had started to collect data, but didn’t really know how they could use it to help their business. I looked for an objective that could be done in a short period of time and would be something that they could use immediately. I first chose to use the data to optimize the the time when a specific number is being called in order to increase pick up rate (the probability that someone answers the phone), based on the time-of-day a given business is contacted. Then, as I found that the data set is not sufficient to meet this objective, I aimed to estimate the relative effort required to reach a certain pick-up ratio (the ratio between received and non-received calls) in each project (which is a list of phone numbers Upcall gets from a customer) depending on two features.  
 
 ## The data 
-Upcall sent to me about 320k calls with the following features: the call id, duration, and time and date, the number out of which the call was made, the call country destination, area code, company name, the industry of the business, campaign type, and the title of the person getting the call. 
+Upcall sent me the data for about 320k customer calls, with the following features: the call id, duration, a timestamp, the number from which the call was made, the call country destination, area code, company name, the industry of the business being contacted, campaign type, and the title of the person receiving the call.
 
 The target had 17 different categories: 
 
@@ -28,11 +24,11 @@ The target had 17 different categories:
 **Speaking**                   **Interested**  
 15 = speaking   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;             17 = maybe_interested 
 
-Since we care only if a call was picked-up or not, I grouped the classes into two categories. I ignored calls with classes 2, 8, 9, 10, 14, as they aren't relevant to the problem at hand. Classes 3 and 4 were grouped as the non-picked up calls. The rest of the classes were grouped as the picked-up calls. The ratio between the calls that were not picked-up to the ones that were was about 2/1. 
+Since we care only if a call was received or not, I grouped the classes into two categories. I ignored calls with classes 2, 8, 9, 10, 14, as they aren't relevant to the problem at hand. Classes 3 and 4 were grouped as the non-received  calls. The rest of the classes were grouped as the received calls. The ratio between the calls that were not received versus received was about 2:1. 
 
 ## Cleaning the data
 
-The main cleaning challenge was to deal with many NaNs. One of the main reasons for having NaNs is the fact that Upcall started to collect different features at different times. Thus, the features that were started to be collected at later times have many NaNs. My strategy was to remove calls that have NaN's in any of the features that are relevant for the specific analysis.
+The main cleaning challenge was to deal with missing data. One of the main reasons for having missing data was the fact that Upcall changed the call features that they were tracking over time. Therefore, the features that were tracked at later times had missing values for earlier call dates. My strategy was to remove calls that had missing data in any of the features that were relevant for this specific analysis.
 
 ## Exploratory data analysis 
 
@@ -50,11 +46,11 @@ All the features were categorical, and so it was straightforward to engineer the
 ## Machine learning
 Even though the dependencies between the pick-up ratio and the various features where not clear in the exploratory data analysis, I applied machine learning classification techniques to perhaps identify more complex dependencies than the ones checked and not found in the exploratory data analysis.
 
-I started with a logistic regression and then tried also random forest. None of them gave an accuracy (which is the relevant metric for our objective) that is significantly higher than the one obtained by simply predicting all calls not to be picked-up, which is the larger class.
+I started with a linear ML techinque (logistic regression) and then tried also a non-linear technique (random forest). None of them gave an accuracy (which is the relevant metric for our objective) that is significantly higher than the one obtained by simply predicting all calls not to be received, which is the larger class.
 
 In order to reduce the number of features, I used principal component analysis. Since I wanted to still be able to interpret the features, I applied the PCA in blocks, where I reduced the dimension of features of the same kind together. For example, I took all the area codes categories and reduced their dimensions. In this way I reduced the number of features and kept their basic meaning.  
 
-In order to increase the amount of data left after the cleaning procedures, I classified the data by taking only features that have low numbers of NaNs (i.e., were collected for a longer time period). However, the accuracy was still not significantly higher than the one obtained by predicting that all the labels will be 0.
+In order to increase the amount of data left after the cleaning procedures, I classified the data by taking only features that most of their data aren't missing (i.e., were collected for a longer time period). However, the accuracy was still not significantly higher than the one obtained by predicting that all the labels will be 0.
 
 
 ## Machine learning aftermath
@@ -85,7 +81,7 @@ neither identified nor flagged, they care less what is the exact number.
 
 ## Back to an exploratory data analysis
 
-As it was challenging to have a time prediction, I left the time and date features and looked at other ones. I looked at the industry and campaign type, as they have the fewest number of categories.  Thus, I chose the two features with the fewest number of categories, and cleaning the data only if there were NaNs in their elements. Leaving more data and less features. Then, I performed exploratory data analysis of the pick-up ratio over these two features.
+As it was challenging to have a time prediction, I left the time and date features and looked at other ones. I looked at the industry and campaign type, as they have the fewest number of categories.  Thus, I chose the two features with the fewest number of categories, and cleaning the data only if there were missing data in their elements. Leaving more data and less features. Then, I performed exploratory data analysis of the pick-up ratio over these two features.
 
 We can see that there is a significant difference in the pick-up ratio between the different industries, as well as between different campaign types.
 ![](https://github.com/Doron-L/PriceOfCall/blob/master/pickup_ratio_vs_industry_png)
