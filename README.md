@@ -11,7 +11,7 @@ that someone answers the phone).
 ## The data 
 Upcall sent to me about 320k calls with the following features: the call id, duration, and time and date, the number out of which the call was made, the call country destination, area code, company name, the industry of the business, campaign type, and the title of the person getting the call. 
 
-For our objective, we need a binary target: 0 and 1, for a non-picked-up and a picked-up call, respectively. However, in the target, there were 17 different categories:
+The target had 17 different categories: 
 
 **Completed**                  **Not interested**  
 0 = completed  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;   5 = hungup  
@@ -28,7 +28,7 @@ For our objective, we need a binary target: 0 and 1, for a non-picked-up and a p
 **Speaking**                   **Interested**  
 15 = speaking   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;             17 = maybe_interested 
 
-I ignored calls with classes 2, 8, 9, 10, 14, as they aren't relevant to the problem at hand. Classes 3 and 4 were grouped as the non-picked up calls. The rest of the classes were grouped as the picked-up calls. The ratio between the calls that were not picked-up to the ones that were was about 2/1. 
+Since we care only if a call was picked-up or not, I grouped the classes into two categories. I ignored calls with classes 2, 8, 9, 10, 14, as they aren't relevant to the problem at hand. Classes 3 and 4 were grouped as the non-picked up calls. The rest of the classes were grouped as the picked-up calls. The ratio between the calls that were not picked-up to the ones that were was about 2/1. 
 
 ## Cleaning the data
 
