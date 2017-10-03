@@ -79,7 +79,7 @@ have some predictive power. I speculate that this is not very true since people 
 number is identified. Then they care if the number is flagged by some app as spam, etc. If the number is
 neither identified nor flagged, they care less what is the exact number.
 
-## Back to an exploratory data analysis
+## Back to exploratory data analysis
 
 As it was challenging to have a time prediction, I left the time and date features and looked at other ones. I looked at the industry and campaign type, as they have the fewest number of categories.  Thus, I chose the two features with the fewest number of categories, and cleaning the data only if there were missing data in their elements. Leaving more data and less features. Then, I performed exploratory data analysis of the pick-up ratio over these two features.
 
