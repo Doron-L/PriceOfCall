@@ -10,7 +10,7 @@ Upcall sent me the data for about 320k customer calls, with the following featur
 The target had 17 different categories: 
 
 **Completed**                  **Not interested**  
-0 = completed  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;   5 = hungup  
+0 = completed  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;   5 = hungup  
 11 = completed_full_call  &emsp;&emsp;&emsp;&nbsp;       6 = not_interested  
 12 = completed_full_email &emsp;&emsp;&nbsp;       7 = dnc (do not call)  
 13 = completed_full_inperson &emsp;    9 = wrong_number
